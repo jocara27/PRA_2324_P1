@@ -8,12 +8,15 @@ class ListArray : public List<T>{
 		int max;
 		int n;
 		static const int MINSIZE;
+		void resize(int new_size);
 
 	public:
 		ListArray();
 		~ListArray();
 		T operator[](int pos);
-		friend std::ostream&operator<<(std::ostream &out, const ListArray<T> &list);
-		void resize(int new_size);
+		friend std::ostream&operator<<(std::ostream &out, const ListArray<T> &list){
+			out << "{";
+			return out;
+		}
 };
 
