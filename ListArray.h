@@ -39,13 +39,18 @@ class ListArray : public List<T>{
 		}
 
 		friend std::ostream&operator<<(std::ostream &out, const ListArray<T> &list){
-			out << "{";
-			return out;
+			out << "List => [\n";
+			for(int i=0; i < list.n; ++i){
+				out << "     " << list.arr[i] << "\n";
+			}
+			out << "]";
+
+		return out;
 		}
 
 		void insert (int pos, T e) override{
 			if (n== max){
-				throw std::out_of_range ("L'array està ple");
+				resize(max * 2); 
 			}
 
 			if (pos > n || pos <0){
@@ -60,11 +65,11 @@ class ListArray : public List<T>{
 		        n++;
 		}
 
-		void append (T e){
+		void append (T e) override{
 			insert (n,e);
 		}
 
-		void preppend(T e){
+		void prepend(T e) override{
 			if (n== max){
 				resize(max *2);
 			}
@@ -79,6 +84,44 @@ class ListArray : public List<T>{
 		int size()override{
 			return n;
 	        }
+
+
+		T remove(int pos) override {
+                    if (pos < 0 || pos >= n) {
+			    throw std::out_of_range("Posición inválida");
+		    }
+		    T removedElement = arr[pos];
+		    for (int i = pos; i < n - 1; ++i){
+			arr[i] = arr[i+1];
+		    }
+	 	    n--;
+		    return removedElement;
+	        }
+
+
+		T get(int pos) override{
+			if (pos<0 || pos>=n){
+				throw std::out_of_range("Posición inválida");
+			}
+			return arr[pos];
+		}
+
+		int search(T e) override {
+			for (int i = 0; i < n; ++i){
+				if (arr[i] == e){
+					return i;
+				}
+			}
+			return -1; //Si no es troba l'elememt
+		}
+
+		bool empty() override{
+			return n == 0;
+		}
+
+
+
+
 
 
 };
