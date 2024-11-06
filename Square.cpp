@@ -3,8 +3,21 @@
 #include "Point2D.h"
 
 //Creem un Check igual que en la classe Rectangle, així sabem si estem manipulant un quadrat
-bool Square::check(Point2D* vertices){
-	return (Point2D::distance(vertices[0], vertices[1]) == Point2D::distance(vertices[1], vertices[2]) == Point2D::distance(vertices[2], vertices[3]) == Point2D::distance(vertices[3], vertices[0]));
+bool Square::check(Point2D* vertices) {
+    double d01 = Point2D::distance(vertices[0], vertices[1]);
+    double d12 = Point2D::distance(vertices[1], vertices[2]);
+    double d23 = Point2D::distance(vertices[2], vertices[3]);
+    double d30 = Point2D::distance(vertices[3], vertices[0]);
+    double d02 = Point2D::distance(vertices[0], vertices[2]);
+    double d13 = Point2D::distance(vertices[1], vertices[3]);
+
+    // Comprovar que els quatre costats són iguals
+    bool sameSides = (d01 == d12) && (d12 == d23) && (d23 == d30);
+
+    // Comprovar que les dues diagonals són iguals i més llargues que els costats
+    bool sameDiagonals = (d02 == d13) && (d02 > d01);
+
+    return sameSides && sameDiagonals;
 }
 
 //Creem un quadrat predeterminat
@@ -22,7 +35,7 @@ Square::Square(std::string color, Point2D* vertices){
 
 	//Comprovem si els vertexs formen un quadrat
 	if(!check(vertices)){
-		throw std::invalid_argument("Els vertexs insertats no formen un quadrat");
+		throw std::invalid_argument("Elsa vertexs insertats no formen un quadrat");
 	}
 
 	this->color = color;
@@ -69,7 +82,7 @@ void Square::translate(double incX, double incY){
         }
 }
 
-void Rectangle::print(){
+void Square::print(){
 
         std::cout << "Quadrat [Color: " << color << ", v0: " << vs[0] << ", v1: " << vs[1] << ", v2: " << vs[2] << ", v3: " << vs[3] << "]" << std::endl;
 }
