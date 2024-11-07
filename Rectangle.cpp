@@ -122,5 +122,5 @@ void Rectangle::translate(double incX, double incY){
 
 void Rectangle::print(){
 
-	std::cout << "Rectangle [Color: " << color << ", v0: " << vs[0] << ", v1: " << vs[1] << ", v2: " << vs[2] << ", v3: " << vs[3] << "]" << std::endl;
+	std::cout << "Rectangle==> [Color: " << color << ", v0: " << vs[0] << ", v1: " << vs[1] << ", v2: " << vs[2] << ", v3: " << vs[3] << "]" << std::endl;
 }

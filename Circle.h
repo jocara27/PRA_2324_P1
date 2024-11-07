@@ -1,3 +1,5 @@
+#ifndef CIRCLE_H
+#define CIRCLE_H
 #include <iostream>
 #include "Shape.h"
 #include "Point2D.h"
@@ -19,3 +21,4 @@ class Circle : public Shape {
 		void print() override;
 		friend std::ostream& operator<<(std::ostream &out, const Circle &c);
 };
+#endif

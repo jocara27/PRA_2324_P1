@@ -1,5 +1,7 @@
-#include <ostream>
+#ifndef LISTARRAY_H
+#define LISTARRAY_H
 
+#include <ostream>
 #include "List.h"
 
 template <typename T>
@@ -23,7 +25,7 @@ class ListArray : public List<T>{
 	public:
 		ListArray(){
 			n = 0;
-			arr = new int [max];
+			arr = new T[max];
 		}
 		
 		~ListArray(){
@@ -125,3 +127,5 @@ class ListArray : public List<T>{
 
 
 };
+
+#endif

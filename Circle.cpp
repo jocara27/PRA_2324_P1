@@ -49,6 +49,6 @@ void Circle::translate(double incX, double incY){
 	center.y += incY;
 }
 
-void Circle::print(){
-	std::cout << "L'àrea del cercle és: " << area() << "\n El perímetre del cercle és: " << perimeter() << std::endl;
+void Circle::print() {
+    std::cout << "Cercle==> [Color: " << color << "; Radi: " << radius << "; Centre: (" << center.x << ", " << center.y << ")]" << std::endl;
 }

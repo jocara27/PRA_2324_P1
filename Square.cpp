@@ -84,6 +84,6 @@ void Square::translate(double incX, double incY){
 
 void Square::print(){
 
-        std::cout << "Quadrat [Color: " << color << ", v0: " << vs[0] << ", v1: " << vs[1] << ", v2: " << vs[2] << ", v3: " << vs[3] << "]" << std::endl;
+        std::cout << "Quadrat==> [Color: " << color << ", v0: " << vs[0] << ", v1: " << vs[1] << ", v2: " << vs[2] << ", v3: " << vs[3] << "]" << std::endl;
 }
 
