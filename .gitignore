@@ -1,0 +1,11 @@
+# Ignorar archivos de secretos
+Token
+contrasenya
+
+# Ignorar archivos temporales y binarios
+*.swp
+*.swo
+*.o
+*~
+bin/
+
