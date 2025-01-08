@@ -55,4 +55,4 @@ bin/testNode: testNode.cpp Node.h
 	mkdir -p bin
 	g++ -o bin/testNode testNode.cpp Node.h
 
-all: bin/testPoint2D bin/testCircle bin/testRectangle bin/testSquare bin/testDrawing bin/testNode Point2D.o Shape.o Circle.o Rectangle.o Square.o Drawing.o 
+all: bin/testPoint2D bin/testCircle bin/testRectangle bin/testSquare bin/testDrawing bin/testNode Point2D.o Shape.o Circle.o Rectangle.o Square.o Drawing.o bin/testListArray bin/testListLinked
