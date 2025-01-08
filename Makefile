@@ -2,6 +2,10 @@ bin/testListArray: testListArray.cpp ListArray.h List.h
 	mkdir -p bin
 	g++ -o bin/testListArray testListArray.cpp ListArray.h
 
+bin/testListLinked: testListLinked.cpp ListLinked.h Node.h
+	mkdir -p bin
+	g++ -o bin/testListLinked testListLinked.cpp Node.h
+
 clean:
 	rm -r *.o *.gch bin
 
@@ -50,3 +54,5 @@ bin/testDrawing: testDrawing.cpp Drawing.o Square.o Rectangle.o Circle.o Shape.o
 bin/testNode: testNode.cpp Node.h
 	mkdir -p bin
 	g++ -o bin/testNode testNode.cpp Node.h
+
+all: bin/testPoint2D bin/testCircle bin/testRectangle bin/testSquare bin/testDrawing bin/testNode Point2D.o Shape.o Circle.o Rectangle.o Square.o Drawing.o 
